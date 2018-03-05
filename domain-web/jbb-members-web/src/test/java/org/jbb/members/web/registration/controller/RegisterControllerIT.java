@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 the original author or authors.
+ * Copyright (C) 2018 the original author or authors.
  *
  * This file is part of jBB Application Project.
  *
@@ -51,7 +51,7 @@ public class RegisterControllerIT extends BaseIT {
     private MockMvc mockMvc;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
     }
 
@@ -78,7 +78,7 @@ public class RegisterControllerIT extends BaseIT {
                 .andExpect(redirectedUrl("/register/success"));
     }
 
-    @Ignore//FIXME?
+    @Ignore
     @Test
     @DirtiesContext(methodMode = DirtiesContext.MethodMode.BEFORE_METHOD)
     public void shouldSetMemberUsernameInFlashAttributes_whenPostCorrectDataInRegisterForm() throws Exception {
